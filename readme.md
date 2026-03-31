@@ -2,8 +2,6 @@
 
 A smart anime discovery web app built with vanilla HTML, CSS, and JavaScript. Powered by the free [Jikan API](https://jikan.moe/) (no API key required).
 
----
-
 ## Features
 
 - Search: anime by title
@@ -13,8 +11,6 @@ A smart anime discovery web app built with vanilla HTML, CSS, and JavaScript. Po
 - Recommendations: section inside each detail view
 - Currently Airing: homepage section showing trending titles
 - Fully responsive: mobile, tablet, and desktop
-
----
 
 ## How to Run Locally
 
@@ -127,5 +123,4 @@ anidiscover/
 
 ## Demo
 
-[Link to demo video — max 2 minutes]
-
+https://www.youtube.com/watch?v=VtkBhh6nyyE

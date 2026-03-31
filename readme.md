@@ -1,4 +1,4 @@
-# AniDiscover — Anime Finder
+ AniDiscover — Anime Finder
 
 A smart anime discovery web app built with vanilla HTML, CSS, and JavaScript. Powered by the free [Jikan API](https://jikan.moe/) (no API key required).
 
@@ -6,15 +6,13 @@ A smart anime discovery web app built with vanilla HTML, CSS, and JavaScript. Po
 
 ## Features
 
-- **Search** anime by title
-- **Filter** by genre, minimum score, year, status, and type
-- **Sort** by top rated, popularity, members, or episodes
-- **Detail modal** — synopsis, score, rank, episodes, studio, duration, and Japanese title
-- **Recommendations** section inside each detail view
-- **Currently Airing** homepage section showing trending titles
-- **Pagination** for large result sets
-- Skeleton loading states and error handling
-- Fully responsive — mobile, tablet, and desktop
+- Search: anime by title
+- Filter: by genre, minimum score, year, status, and type
+- Sort: by top rated, popularity, members, or episodes
+- Detail modal: — synopsis, score, rank, episodes, studio, duration, and Japanese title
+- Recommendations: section inside each detail view
+- Currently Airing: homepage section showing trending titles
+- Fully responsive: mobile, tablet, and desktop
 
 ---
 
@@ -54,22 +52,21 @@ Visit `http://localhost:8080`.
 
 Rate limit: ~3 requests/second.
 
----
+ Deployment
 
-## Deployment
+  Prerequisites
 
-### Prerequisites
 - Two web servers (Web01, Web02) running Nginx
 - One load balancer (Lb01)
 
-### Step 1 — Upload to Web01 and Web02
+Step 1 — Upload to Web01 and Web02
 
 ```bash
 scp -r ./anidiscover/ user@web01:/var/www/html/anidiscover/
 scp -r ./anidiscover/ user@web02:/var/www/html/anidiscover/
 ```
 
-### Step 2 — Configure Nginx on each web server
+Step 2 — Configure Nginx on each web server
 
 ```nginx
 server {
@@ -87,7 +84,7 @@ server {
 sudo systemctl restart nginx
 ```
 
-### Step 3 — Configure Load Balancer (Lb01)
+Step 3 — Configure Load Balancer (Lb01)
 
 ```nginx
 upstream anime_app {
@@ -119,8 +116,6 @@ curl http://your-load-balancer-ip
 for i in {1..10}; do curl -s -o /dev/null -w "%{http_code}\n" http://your-load-balancer-ip; done
 ```
 
----
-
 ## Project Structure
 
 ```
@@ -130,10 +125,7 @@ anidiscover/
 └── README.md
 ```
 
----
-
 ## Demo
 
 [Link to demo video — max 2 minutes]
 
-Show: searching an anime, applying genre filters, sorting by score, opening a detail modal with recommendations, and the app live via the load balancer URL.
